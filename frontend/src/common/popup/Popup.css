@@ -1,0 +1,64 @@
+.Popup__body {
+  position: relative;
+  padding: 2rem;
+}
+.Popup__close_icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  color: #20232b;
+  cursor: pointer;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  border: 1px solid #ddd;
+}
+.Popup__close_icon > i {
+  font-size: 1.35rem;
+}
+.Popup__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+.Popup__icon_space {
+  display: flex;
+}
+.Popup__icon_space > img {
+  display: flex;
+  width: 7.25rem;
+  object-fit: contain;
+}
+.Popup__content_space {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+.Popup__heading_fs {
+  font-size: var(--heading_fs);
+  font-weight: 700;
+  color: var(--black_color);
+}
+.Popup__message_fs {
+  max-width: 90%;
+  font-size: var(--note_fs);
+  font-weight: 500;
+  color: var(--grey_color);
+}
+.Popup__actions {
+  margin-top: 1rem;
+}
+
+.Payment__action {
+  padding-bottom: 2rem;
+}
