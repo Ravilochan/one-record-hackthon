@@ -1,0 +1,45 @@
+.CartingTableData__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.TableData__heading {
+  font-weight: 500;
+  color: #716d74;
+}
+.TableData__bodyInfo {
+  font-weight: 600;
+  color: var(--black_color);
+}
+.DestinationTableData__location_wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.DestinationTableData__location_wrap > img {
+  width: 2rem;
+}
+.AirlineTableData__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.AirlineTableData__wrap > img {
+  width: 4.5rem;
+  object-fit: contain;
+}
+
+.FlightTableData__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.FlightTableData__flight_wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.FlightTableData__flight_wrap > img {
+  width: 4rem;
+  object-fit: contain;
+}

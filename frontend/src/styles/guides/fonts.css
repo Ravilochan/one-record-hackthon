@@ -10,3 +10,28 @@
   --tiny_fs: 0.775rem;
   --mini_fs: 0.625rem;
 }
+
+.mi_title {
+  font-size: var(--title_fs);
+}
+.mi_heading {
+  font-size: var(--heading_fs);
+}
+.mi_subheading {
+  font-size: var(--subheading_fs);
+}
+.mi_miniheading {
+  font-size: var(--miniheading_fs);
+}
+.mi_body {
+  font-size: var(--body_fs);
+}
+.mi_note {
+  font-size: var(--note_fs);
+}
+.mi_small {
+  font-size: var(--small_fs);
+}
+.mi_tiny {
+  font-size: var(--tiny_fs);
+}

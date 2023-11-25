@@ -1,0 +1,83 @@
+.PaymentForm__bill_card {
+  background-color: var(--white_color);
+  border-radius: 0.4rem;
+  padding: 1rem 0rem;
+  margin-top: 1rem;
+}
+.Label_with_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.PaymentForm__bill_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+}
+
+.PaymentForm__bill_row > .bill_title_fs {
+  font-weight: 500;
+  color: #666;
+}
+
+.PaymentForm__bill_row > .bill_amount_fs {
+  font-weight: 500;
+  color: #666;
+}
+
+.PaymentForm__bill_card_basic {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #e3e3e3;
+}
+
+.PaymentForm__bill_card_taxes {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #00000033;
+}
+
+.final_price_tag > h2 {
+  color: #14a307 !important;
+}
+
+.PaymentForm__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.PDA_card__icon > img {
+  width: 3rem;
+  object-fit: contain;
+}
+
+.PaymentForm__PDA_card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--white_color);
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 7px 0px rgba(66, 66, 66, 0.14);
+  border: 1px solid #dadbdc;
+  padding: 1rem 1.25rem;
+}
+
+.PDA_card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.PaymentForm__payment_options {
+  background-color: var(--white_color);
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 7px 0px rgba(66, 66, 66, 0.14);
+  border: 1px solid #dadbdc;
+  padding: 0rem 1.25rem;
+}
+
+.PaymentForm__PDA_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

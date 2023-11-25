@@ -1,11 +1,12 @@
 import React from "react";
 import Banner from "../../components/banner/Banner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Booking.css";
 import { TextField } from "@mui/material";
 import PriceList from "../../components/PriceList/PriceList";
 
 export default function Booking() {
+  const Navigate = useNavigate();
   const [openDraftCOR, setOpenDraftCOR] = React.useState(false);
   const handleOpenDraftCOR = () => {
     setOpenDraftCOR(true);
@@ -17,7 +18,7 @@ export default function Booking() {
 
   return (
     <React.Fragment>
-      <Banner />
+      <Banner title={"Shipment Info"} url={"/"} />
 
       <div className='Booking__wrapper'>
         <div className='mi_page_container'>
@@ -131,6 +132,29 @@ export default function Booking() {
                     </div>
                   </div>
                   <div className='Input__row '></div>
+                </div>
+              </div>
+
+              <div className='Input__section'>
+                <p className='Input__message_fs'>
+                  Please verify all the above information and proceed with the
+                  payment options
+                </p>
+                <div className='Input__action_list'>
+                  <button
+                    to={"/booking-cargo"}
+                    className='mi_btn mi_btn_outline'
+                    onClick={() => Navigate("/")}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    to={"/booking-cargo"}
+                    className='mi_btn mi_btn_secondary'
+                    onClick={() => Navigate("/booking-payment")}
+                  >
+                    Book Cargo
+                  </button>
                 </div>
               </div>
             </div>

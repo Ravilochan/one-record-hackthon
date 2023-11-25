@@ -2,3 +2,15 @@
   width: 100%;
   padding: 1.25rem 0 5rem 0;
 }
+
+.Input__action_list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.Input__message_fs {
+  font-size: var(--small_fs);
+  font-weight: 500;
+  color: var(--grey_color);
+}

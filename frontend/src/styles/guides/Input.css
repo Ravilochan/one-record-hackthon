@@ -58,3 +58,87 @@
   color: var(--black_color);
   font-weight: 700;
 }
+
+.Input__row_section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.Input__title_label_space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Input__title_label_space h2 {
+  font-weight: 700;
+  color: var(--clay_color);
+}
+/* .ModalForm__container .Input__title_label_space h2 {
+  text-decoration: underline;
+} */
+.Input__two_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.25rem;
+}
+.Input__three_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 1.25rem;
+}
+.Input__four_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 1.25rem;
+}
+.Input__inner_two_half_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.Input__inner_two_quarter_column {
+  display: grid;
+  grid-template-columns: 1.25fr 0.5fr;
+  gap: 1rem;
+}
+.Input__col_field {
+  display: flex;
+}
+
+.fetch__info_button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #0682ee;
+  cursor: pointer;
+  transition: var(--animate_3s);
+}
+
+.fetch__info_button > i {
+  font-size: 0.95rem;
+}
+.fetch__info_button > p {
+  font-weight: 600;
+}
+
+/* Custom Inputs */
+.Input__shipment_handling_column {
+  display: grid;
+  grid-template-columns: 2.25fr 1fr;
+  align-items: center;
+  gap: 1.25rem;
+}
+.Input__hipment_handling_fields {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 1rem;
+}
+
+.SHC__close_icon > i {
+  font-size: 1.25rem;
+  color: red;
+  cursor: pointer;
+}

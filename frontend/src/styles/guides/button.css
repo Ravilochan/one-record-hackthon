@@ -44,16 +44,14 @@
   border: 2px solid var(--bs_primary_active) !important;
   color: #fff !important;
 }
-
-.mi_btn_secondary {
-  background-color: var(--bs_secondary) !important;
-  border: 2px solid var(--bs_secondary) !important;
-  color: #fff !important;
+.mi_btn_outline {
+  background-color: #fff !important;
+  border: 2px solid #e3e5e5 !important;
+  color: #282828 !important;
 }
-
-.mi_btn_secondary:hover {
-  background-color: var(--bs_secondary_active) !important;
-  border: 2px solid var(--bs_secondary_active) !important;
+.mi_btn_secondary {
+  background-color: #ff6a28 !important;
+  border: 2px solid #ff6a28 !important;
   color: #fff !important;
 }
 

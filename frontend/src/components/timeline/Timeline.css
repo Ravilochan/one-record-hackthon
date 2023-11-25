@@ -1,0 +1,91 @@
+:root {
+  --time_card_size: 2.25rem;
+  --status__pending: #bcbcbd;
+  --status__active: #2a9df4;
+  --status__complete: #3b9f32;
+
+  --info_card_size: 0.875rem;
+}
+
+.Timeline__container {
+  background-color: var(--white_color);
+  border-radius: 0.4rem;
+  border: 1px solid #e3e5e5;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.Timeline__container.padding_none {
+  padding: 0 0 0 0 !important;
+}
+.Timeline__title_fs {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+  color: var(--dark_color);
+}
+
+/* Timeline Card */
+.Timeline__flow_card_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.35rem;
+  position: relative;
+}
+.Timeline__flow_card_list::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  top: 0;
+  height: 96%;
+  width: 8px;
+  background-color: #d9f0d6;
+}
+
+.TimelineFlowCard__wrapper {
+  display: grid;
+  grid-template-columns: var(--time_card_size) 1fr;
+  gap: 1.125rem;
+  z-index: 1;
+}
+.TimelineFlowCard__icon {
+  width: var(--time_card_size);
+  height: var(--time_card_size);
+  border-radius: var(--time_card_size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.TimelineFlowCard__icon.pending {
+  background-color: var(--status__pending);
+}
+.TimelineFlowCard__icon.active {
+  background-color: var(--status__active);
+}
+.TimelineFlowCard__icon.completed {
+  background-color: var(--status__complete);
+}
+.TimelineFlowCard__icon > i {
+  font-size: 0.875rem;
+  color: var(--white_color);
+}
+.TimelineFlowCard__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.Flow__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.flow__heading_fs {
+  font-weight: 600 !important;
+  color: var(--dark_color);
+}
+.flow__date_fs {
+  font-weight: 500;
+  color: var(--slate_color);
+}
