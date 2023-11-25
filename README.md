@@ -1,1 +1,1 @@
-# one-record-hackthon
+# one-record-hackathon
