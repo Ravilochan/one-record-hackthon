@@ -1,0 +1,114 @@
+:root {
+  --header_height: 5rem;
+  --header_logo_size: 7.25rem;
+  --item_gap_small: 3rem;
+  --item_gap_medium: 3.5rem;
+}
+
+.Header__header_wrap {
+  width: 100%;
+  height: var(--header_height);
+  display: flex;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.4s ease;
+}
+.Header__header_wrap.bg_added {
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.Header__navbar {
+  width: 100%;
+  height: var(--header_height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Header__navbar_left {
+  display: flex;
+  align-items: center;
+  gap: var(--item_gap_medium);
+}
+
+.brand_logo_link > img {
+  width: var(--header_logo_size);
+}
+.Header__menu_list {
+  display: flex;
+  align-items: center;
+  gap: var(--item_gap_small);
+}
+.Header__menu_item {
+  display: flex;
+  position: relative;
+}
+
+.Header__navbar_right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mobile__menu_icon {
+  display: none;
+}
+.mobile_menu_actions {
+  display: none;
+}
+
+.nav__search_bar_space {
+  display: flex;
+}
+.nav__search_bar {
+  height: var(--button_height);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem;
+  border-radius: 0.4rem;
+  border: 2px solid #e3e5e5;
+  background: rgba(255, 255, 255, 0.95);
+}
+.nav__search_bar > input {
+  width: 16rem;
+  padding: 0.2rem 0.6rem;
+  border: none;
+  font-size: 0.875rem;
+  outline: none;
+  color: #23262f;
+  background: transparent;
+  font-weight: 400;
+}
+.nav__search_bar > input::placeholder {
+  color: #72777a;
+  font-weight: 400;
+}
+.nav__search_icon {
+  width: calc(var(--button_height) - 0.9rem);
+  height: calc(var(--button_height) - 0.9rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #23262f;
+  color: #fff;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 786px) {
+  .Header__menu_list {
+    display: none;
+  }
+  .Header__navbar_right {
+    display: none;
+  }
+
+  .mobile_menu_actions {
+    display: flex;
+    cursor: pointer;
+  }
+}

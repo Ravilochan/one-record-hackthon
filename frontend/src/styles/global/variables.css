@@ -1,0 +1,16 @@
+:root {
+  --primary_color: #0d9488;
+  --secondary_color: #20232b;
+  --theme_primary_color: #cfe7de;
+  --white_color: #fff;
+  --black_color: #20232b;
+  --dark_color: #222327;
+  --clay_color: #52525b;
+  --grey_color: #8c8e90;
+  --slate_color: #8692a6;
+  --border_grey: #c5c5c5;
+
+  --icon_size_regular: 1.125rem;
+  --z_index_regular: 100;
+  --animate: all 0.3s ease;
+}

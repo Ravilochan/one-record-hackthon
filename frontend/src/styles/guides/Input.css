@@ -1,0 +1,60 @@
+.Input__table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.Input__row {
+  width: 100%;
+}
+.Input__row.single_column {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+.Input__row.two_column {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+.Input__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+.Input__column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.Input__label_fs {
+  font-size: var(--small_fs);
+  font-weight: 500;
+  color: var(--grey_color);
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.Input__label_fs > span {
+  font-size: var(--tiny_fs);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.Input__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+}
+
+.Input__section > h1 {
+  font-size: var(--heading_fs);
+  color: var(--black_color);
+  font-weight: 700;
+}

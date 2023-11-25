@@ -1,0 +1,91 @@
+:root {
+  --bs_primary: #0b0b0b;
+  --bs_secondary: #282828;
+  --bs_primary_active: #282828;
+  --bs_secondary_active: hsl(0, 0%, 13%);
+  --bs_round: #f2f4f5;
+  --bs_btn_white: #ffffff;
+
+  --bs_accept: #14b8a6;
+  --bs_accept_active: #0d9488;
+
+  --button_height: 2.65rem;
+}
+
+.mi_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--theme_font_family);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--button_height);
+  border: none;
+  font-size: 0.8rem;
+  line-height: 1.125rem;
+  padding: 0.25rem 1.5rem;
+  height: var(--button_height);
+}
+
+/* Button Colors */
+
+.mi_btn_primary {
+  background-color: var(--bs_primary) !important;
+  border: 2px solid var(--bs_primary) !important;
+  color: #fff !important;
+}
+
+.mi_btn_primary:hover {
+  background-color: var(--bs_primary_active) !important;
+  border: 2px solid var(--bs_primary_active) !important;
+  color: #fff !important;
+}
+
+.mi_btn_secondary {
+  background-color: var(--bs_secondary) !important;
+  border: 2px solid var(--bs_secondary) !important;
+  color: #fff !important;
+}
+
+.mi_btn_secondary:hover {
+  background-color: var(--bs_secondary_active) !important;
+  border: 2px solid var(--bs_secondary_active) !important;
+  color: #fff !important;
+}
+
+.mi_btn_round {
+  width: var(--button_height);
+  height: var(--button_height);
+  border-radius: var(--button_height);
+  background-color: var(--bs_round);
+  border: 2px solid #e3e5e5;
+  color: #23262f !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mi_btn_round > i {
+  font-size: 1.25rem;
+}
+.mi_btn_accept {
+  background-color: var(--bs_accept) !important;
+  border: 2px solid var(--bs_accept) !important;
+  color: #fff !important;
+  border-radius: 0.35rem !important;
+}
+.mi_btn_accept:hover {
+  background-color: var(--bs_accept_active) !important;
+  border: 2px solid var(--bs_accept_active) !important;
+  color: #fff !important;
+}
+
+.mi_btn_accept_alt {
+  background-color: #d1fae5 !important;
+  border: #a7f3d0 !important;
+  color: #22c55e !important;
+}

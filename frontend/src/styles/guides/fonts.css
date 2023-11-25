@@ -1,0 +1,12 @@
+:root {
+  --title_fs: 3.75rem;
+  --heading_fs: 1.5rem;
+  --superheading_fs: 1.25rem;
+  --subheading_fs: 1.125rem;
+  --miniheading_fs: 1.1rem;
+  --body_fs: 1rem;
+  --note_fs: 0.925rem;
+  --small_fs: 0.875rem;
+  --tiny_fs: 0.775rem;
+  --mini_fs: 0.625rem;
+}

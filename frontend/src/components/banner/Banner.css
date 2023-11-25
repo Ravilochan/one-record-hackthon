@@ -1,0 +1,25 @@
+.Banner__wrapper {
+  width: 100%;
+  background: url("/backgrounds/background.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: var(--header_height);
+}
+.Banner__space {
+  padding: 2.5rem 0;
+}
+.Banner__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.Banner__title_fs {
+  font-size: var(--heading_fs);
+  font-weight: 700;
+  color: #fff;
+}
+
+.Banner__title > i {
+  font-size: var(--heading_fs);
+  color: #fff;
+}

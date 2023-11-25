@@ -1,0 +1,16 @@
+.Footer__wrapper {
+  width: 100%;
+  background: #15181d;
+}
+.Footer__space {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+.Footer__body_fs {
+  font-size: var(--small_fs);
+  font-weight: 400;
+  color: #ddd;
+}

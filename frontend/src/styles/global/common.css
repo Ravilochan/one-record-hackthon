@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --theme_font_family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--theme_font_family);
+}
+
+.mi_page_container {
+  display: block;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.BookingBreadCrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.25rem 0;
+}
+.BookingBreadCrumb__link_fs {
+  font-size: var(--small_fs);
+  font-weight: 400;
+  color: #667085;
+}
+.BookingBreadCrumb__list > i {
+  font-size: var(--note_fs);
+
+  color: #667085;
+}
+.BookingBreadCrumb__link_fs.active {
+  font-size: var(--small_fs);
+  font-weight: 500;
+  color: #026e78;
+}
