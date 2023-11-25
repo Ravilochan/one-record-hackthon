@@ -9,6 +9,16 @@ import Slide from "@mui/material/Slide";
 import Arrow from "/icons/arrow.svg";
 import { TextField } from "@mui/material";
 import Popup from "../../common/popup/Popup";
+import CheckoutForm from "./CheckoutForm";
+
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe('pk_test_51KpYA6DMTAJsEyJetHFho8dUtvGEl7A2KEWsgsmoRAj0WPNuwjoKaF7gV9LgaBM0UCMty6QwruUJzvPD7R748xKc00UU3a8wnM');
+
+
 // Transition for Popup
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction='up' ref={ref} {...props} />;
@@ -16,6 +26,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function PaymentOption(props) {
   const { onClose, open, handleOpenReviewCOR, ...other } = props;
+  const [clientSecret, setClientSecret] = React.useState("");
 
   const [openPopup, setOpenPopup] = React.useState(false);
   const handleOpenPopup = () => {
@@ -25,6 +36,30 @@ export default function PaymentOption(props) {
   const handleClosePopup = () => {
     setOpenPopup(false);
   };
+
+  // const options = {
+  //   // passing the client secret obtained from the server
+  //   clientSecret: 'sk_test_51KpYA6DMTAJsEyJelj7WWKumHF3DB8JCCEMtGZbwup9HOATVFP6sGxutiGfWLgzGSrRYZm0IEvbXKW2BSJFnaEoV00ACcIXHKX',
+  // };
+
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
+  React.useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("http://localhost:3000/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "xl-tshirt" }], price: 40 }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
 
   return (
     <React.Fragment>
@@ -49,9 +84,13 @@ export default function PaymentOption(props) {
           </div>
         </DialogTitle>
         <DialogContent dividers>
-          <div className='Input__table'>
+          {clientSecret && (
+            <Elements stripe={stripePromise} options={options}>
+              <CheckoutForm />
+            </Elements>
+          )}
+          {/* <div className='Input__table'>
             <div className='Input__section'>
-              {/* Single Row */}
               <div className='Input__grid'>
                 <div className='Input__row '>
                   <div className='Input__column'>
@@ -117,7 +156,7 @@ export default function PaymentOption(props) {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
         </DialogContent>
       </Dialog>
 
