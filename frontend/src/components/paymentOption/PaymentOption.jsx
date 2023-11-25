@@ -3,7 +3,7 @@ import React from "react";
 // MUI Imports
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
+
 import Dialog from "@mui/material/Dialog";
 import Slide from "@mui/material/Slide";
 import Arrow from "/icons/arrow.svg";
@@ -11,13 +11,14 @@ import { TextField } from "@mui/material";
 import Popup from "../../common/popup/Popup";
 import CheckoutForm from "./CheckoutForm";
 
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('pk_test_51KpYA6DMTAJsEyJetHFho8dUtvGEl7A2KEWsgsmoRAj0WPNuwjoKaF7gV9LgaBM0UCMty6QwruUJzvPD7R748xKc00UU3a8wnM');
-
+const stripePromise = loadStripe(
+  "pk_test_51KpYA6DMTAJsEyJetHFho8dUtvGEl7A2KEWsgsmoRAj0WPNuwjoKaF7gV9LgaBM0UCMty6QwruUJzvPD7R748xKc00UU3a8wnM",
+);
 
 // Transition for Popup
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -43,7 +44,7 @@ export default function PaymentOption(props) {
   // };
 
   const appearance = {
-    theme: 'stripe',
+    theme: "stripe",
   };
   const options = {
     clientSecret,

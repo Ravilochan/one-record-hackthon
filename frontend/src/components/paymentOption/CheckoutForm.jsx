@@ -1,5 +1,6 @@
 import React from "react";
-import { ElementsConsumer, PaymentElement } from '@stripe/react-stripe-js';
+import "./checkoutForm.css";
+import { ElementsConsumer, PaymentElement } from "@stripe/react-stripe-js";
 
 class CheckoutForm extends React.Component {
   handleSubmit = async (event) => {
@@ -7,7 +8,7 @@ class CheckoutForm extends React.Component {
     // which would refresh the page.
     event.preventDefault();
 
-    const {stripe, elements} = this.props;
+    const { stripe, elements } = this.props;
 
     if (!stripe || !elements) {
       // Stripe.js hasn't yet loaded.
@@ -37,7 +38,17 @@ class CheckoutForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <PaymentElement />
-        <button disabled={!this.props.stripe}>Submit</button>
+        <div className='Input__action_list'>
+          <button className='mi_btn mi_btn_outline' type='reset'>
+            Reset
+          </button>
+          <button
+            disabled={!this.props.stripe}
+            className='mi_btn mi_btn_secondary'
+          >
+            Submit
+          </button>
+        </div>
       </form>
     );
   }
@@ -46,9 +57,9 @@ class CheckoutForm extends React.Component {
 export default function InjectedCheckoutForm() {
   return (
     <ElementsConsumer>
-      {({stripe, elements}) => (
+      {({ stripe, elements }) => (
         <CheckoutForm stripe={stripe} elements={elements} />
       )}
     </ElementsConsumer>
-  )
+  );
 }
