@@ -4,7 +4,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 
 // Image
-import Logo from "/logos/airline-logo.svg";
+import Logo from "../../assets/logos/airline-logo.svg";
 
 export default function Header() {
   const [headerScroll, setheaderScroll] = React.useState(false);
@@ -22,32 +22,32 @@ export default function Header() {
   return (
     <React.Fragment>
       <header
-        id="header"
-        class={`Header__header_wrap ${headerScroll && "bg_added"}`}
+        id='header'
+        className={`Header__header_wrap ${headerScroll && "bg_added"}`}
       >
-        <div class="mi_page_container">
-          <nav class="Header__navbar">
-            <article class="Header__navbar_left">
-              <Link to="/" class="brand_logo_link">
-                <img src={Logo} alt="Logo" />
+        <div className='mi_page_container'>
+          <nav className='Header__navbar'>
+            <article className='Header__navbar_left'>
+              <Link to='/' class='brand_logo_link'>
+                <img src={Logo} alt='Logo' />
               </Link>
 
-              <div className="nav__search_bar_space">
-                <div className="nav__search_bar">
-                  <input type="text" placeholder="Search your cargo" />
-                  <div className="nav__search_icon">
-                    <i class="bx bx-search"></i>
+              <div className='nav__search_bar_space'>
+                <div className='nav__search_bar'>
+                  <input type='text' placeholder='Search your cargo' />
+                  <div className='nav__search_icon'>
+                    <i className='bx bx-search'></i>
                   </div>
                 </div>
               </div>
             </article>
-            <article class="Header__navbar_right">
-              <Link to={"/booking-cargo"} class="mi_btn mi_btn_primary">
+            <article className='Header__navbar_right'>
+              <Link to={"/booking-cargo"} class='mi_btn mi_btn_primary'>
                 Book Cargo
               </Link>
 
-              <div class="mi_btn_round">
-                <i class="bx bx-user"></i>
+              <div className='mi_btn_round'>
+                <i className='bx bx-user'></i>
               </div>
             </article>
           </nav>
