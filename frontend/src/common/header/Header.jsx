@@ -28,7 +28,7 @@ export default function Header() {
         <div className='mi_page_container'>
           <nav className='Header__navbar'>
             <article className='Header__navbar_left'>
-              <Link to='/' class='brand_logo_link'>
+              <Link to='/' className='brand_logo_link'>
                 <img src={Logo} alt='Logo' />
               </Link>
 
@@ -42,7 +42,7 @@ export default function Header() {
               </div>
             </article>
             <article className='Header__navbar_right'>
-              <Link to={"/booking-cargo"} class='mi_btn mi_btn_primary'>
+              <Link to={"/booking-cargo"} className='mi_btn mi_btn_primary'>
                 Book Cargo
               </Link>
 
