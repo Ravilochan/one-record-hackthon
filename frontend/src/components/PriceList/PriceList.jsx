@@ -10,38 +10,39 @@ import Slide from "@mui/material/Slide";
 
 // Transition for Popup
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction='up' ref={ref} {...props} />;
 });
 
 export default function PriceList(props) {
+  // eslint-disable-next-line react/prop-types
   const { onClose, open, handleOpenReviewCOR, ...other } = props;
 
   return (
     <React.Fragment>
       <Dialog
         sx={{ "& .MuiDialog-paper": { width: "100%" } }}
-        maxWidth="sm"
+        maxWidth='sm'
         open={open}
         TransitionComponent={Transition}
         {...other}
       >
         <DialogTitle>
-          <div className="ModalPage__header">
-            <h1 className="ModalPage_main_title_fs">
+          <div className='ModalPage__header'>
+            <h1 className='ModalPage_main_title_fs'>
               Pick the Flight and Price
             </h1>
             <div
-              className="ModalPage__close_icon"
+              className='ModalPage__close_icon'
               onClick={() => {
                 onClose();
               }}
             >
-              <i class="bx bx-x"></i>
+              <i className='bx bx-x'></i>
             </div>
           </div>
         </DialogTitle>
         <DialogContent dividers>
-          <div className="SaveDraft__list">
+          <div className='SaveDraft__list'>
             <FlightPriceList />
             <FlightPriceList />
             <FlightPriceList />
@@ -63,9 +64,9 @@ export default function PriceList(props) {
           </div>
         </DialogContent>
         <DialogActions>
-          <div className="ModalPage__actions">
+          <div className='ModalPage__actions'>
             <button
-              className="mi_btn mi_btn_medium mi_btn_primary"
+              className='mi_btn mi_btn_medium mi_btn_primary'
               onClick={() => {
                 onClose();
               }}
@@ -82,15 +83,15 @@ export default function PriceList(props) {
 function FlightPriceList() {
   return (
     <React.Fragment>
-      <div className="SaveDraftItems__card">
-        <div className="SaveDraftItems__carting_info">
-          <div className="CartingTableData__wrap">
-            <p className="mi_tiny TableData__heading">Flight Number</p>
-            <h1 className="mi_small TableData__bodyInfo">161223728</h1>
+      <div className='SaveDraftItems__card'>
+        <div className='SaveDraftItems__carting_info'>
+          <div className='CartingTableData__wrap'>
+            <p className='mi_tiny TableData__heading'>Flight Number</p>
+            <h1 className='mi_small TableData__bodyInfo'>161223728</h1>
           </div>
         </div>
 
-        <div className="SaveDraftItems__actions">
+        <div className='SaveDraftItems__actions'>
           <button className={`mi_btn mi_btn_medium mi_btn_accept`}>
             <span>Rs 12,000</span>
           </button>

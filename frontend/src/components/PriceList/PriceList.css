@@ -1,0 +1,56 @@
+.ModalPage__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ModalPage__close_icon > i {
+  font-size: 1.25rem;
+  color: var(--slate_color);
+  cursor: pointer;
+}
+.CartingTableData__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.TableData__heading {
+  font-size: var(--tiny_fs);
+  font-weight: 500;
+  color: #716d74;
+}
+.TableData__bodyInfo {
+  font-size: var(--small_fs);
+  font-weight: 600;
+  color: var(--black_color);
+}
+.ModalPage_main_title_fs {
+  font-size: var(--subheading_fs);
+  font-weight: 600;
+  color: var(--black_color);
+}
+.SaveDraft__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.SaveDraftItems__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: var(--white_color);
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 7px 0px rgba(66, 66, 66, 0.14);
+  border: 1px solid #dadbdc;
+}
+.SaveDraftItems__carting_info {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.SaveDraftItems__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
