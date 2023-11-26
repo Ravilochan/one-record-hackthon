@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "../../components/banner/Banner";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { TextField } from "@mui/material";
 import PriceList from "../../components/PriceList/PriceList";
 import "./Track.css";
@@ -8,6 +8,7 @@ import Timeline from "../../components/timeline/Timeline";
 import ReviewShipment from "../../components/reviewShipment/ReviewShipment";
 
 export default function Track() {
+  const params = useParams();
   const [openDraftCOR, setOpenDraftCOR] = React.useState(false);
   const handleOpenDraftCOR = () => {
     setOpenDraftCOR(true);
@@ -19,7 +20,7 @@ export default function Track() {
 
   return (
     <React.Fragment>
-      <Banner title={"Track AWB-1213311"} url={"/booking-payment"} />
+      <Banner title={"Track 157-46078104"} url={"/booking-payment"} />
 
       <div className='Booking__wrapper'>
         <div className='mi_page_container'>
@@ -55,21 +56,16 @@ export default function Track() {
 
 function BookingBreadCrumb() {
   return (
-    <React.Fragment>
-      <div className='BookingBreadCrumb__list'>
-        <Link to={"/"} className='BookingBreadCrumb__link_fs'>
-          Home
-        </Link>
-        <i className='bx bx-chevron-right'></i>
-        <p className='BookingBreadCrumb__link_fs'>Booking Cargo</p>
-        <i className='bx bx-chevron-right'></i>
-        <Link
-          to={"/booking-cargo"}
-          className='BookingBreadCrumb__link_fs active'
-        >
-          Track AWB-1213311
-        </Link>
-      </div>
-    </React.Fragment>
+    <div className='BookingBreadCrumb__list'>
+      <Link to={"/"} className='BookingBreadCrumb__link_fs'>
+        Home
+      </Link>
+      <i className='bx bx-chevron-right'></i>
+      <p className='BookingBreadCrumb__link_fs'>Booking Cargo</p>
+      <i className='bx bx-chevron-right'></i>
+      <Link to={"/booking-cargo"} className='BookingBreadCrumb__link_fs active'>
+        Track
+      </Link>
+    </div>
   );
 }
