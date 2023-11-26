@@ -20,7 +20,7 @@ class CheckoutForm extends React.Component {
       //`Elements` instance that was used to create the Payment Element
       elements,
       confirmParams: {
-        return_url: "http://localhost:5173/",
+        return_url: "http://localhost:5173/success",
       },
     });
 

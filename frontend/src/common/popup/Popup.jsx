@@ -78,8 +78,7 @@ export default function Popup(props) {
                     Oops ! Something went wrong
                   </h1>
                   <p className='Popup__message_fs'>
-                    Your Booking is confirmed and you can track your shipment
-                    with awb number
+                    Your Booking is not confirmed
                   </p>
                 </div>
                 <div className='Popup__actions'>

@@ -3,6 +3,7 @@ import Home from "../page/home/Home";
 import Booking from "../page/booking/Booking";
 import Payment from "../page/payment/Payment";
 import PageLayout from "./layouts/Pagelayout";
+import SuccessPage from "../page/success/success";
 import Track from "../page/track/Track";
 
 const PageRoutes = createBrowserRouter([
@@ -23,7 +24,11 @@ const PageRoutes = createBrowserRouter([
         element: <Payment />,
       },
       {
-        path: "track",
+        path: "success",
+        element: <SuccessPage />,
+      },
+      {
+        path: "track/:awb",
         element: <Track />,
       },
     ],
