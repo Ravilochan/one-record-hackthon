@@ -26,18 +26,15 @@ export default function Payment() {
           <div className='Booking__main_container'>
             <div className='Input__table'>
               <div className='Input__section'>
-                <h1>AWB 12232833</h1>
+                {/* <h1>AWB 12232833</h1> */}
                 {/* Single Row */}
                 <div className='Input__grid'>
                   <div className='Input__row '>
                     <div className='Input__column'>
                       <p className='Input__label_fs'>
-                        Agent IATA Reference Number
+                        Customer Email Address to send Invoice
                       </p>
-                      <TextField
-                        fullWidth
-                        placeholder='Enter your IATA Number'
-                      />
+                      <TextField fullWidth placeholder='Enter Email Address' />
                     </div>
                   </div>
                 </div>
@@ -57,33 +54,33 @@ export default function Payment() {
                             <h2 className='mi_small bill_title_fs'>
                               Net Amount
                             </h2>
-                            <p className='mi_note bill_amount_fs'>₹ 2,000</p>
+                            <p className='mi_note bill_amount_fs'>$ 1200</p>
                           </div>
                           <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small bill_title_fs'>
-                              SHC 1 ( Rs 15 * 100 Kg )
+                              GRC ( $ 6.0 * 200 Kg )
                             </h2>
-                            <p className='mi_note bill_amount_fs'>₹ 1,500</p>
+                            <p className='mi_note bill_amount_fs'>$ 1200</p>
                           </div>
-                          <div className='PaymentForm__bill_row'>
+                          {/* <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small bill_title_fs'>
                               SHC 2 ( Rs 10 * 100 Kg )
                             </h2>
                             <p className='mi_note bill_amount_fs'>₹ 1,000</p>
-                          </div>
+                          </div> */}
                         </div>
                         <div className='PaymentForm__bill_card_taxes'>
                           <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small bill_title_fs'>
-                              Taxes ( GST )
+                              Taxes (5%)
                             </h2>
-                            <p className='mi_note bill_amount_fs'>₹ 200</p>
+                            <p className='mi_note bill_amount_fs'>$ 60</p>
                           </div>
                         </div>
                         <div className='PaymentForm__bill_card_total'>
                           <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small'>Total Amount</h2>
-                            <h2 className='mi_small'>₹ 4,700</h2>
+                            <h2 className='mi_small'>$ 1260</h2>
                           </div>
                         </div>
                       </div>
@@ -96,7 +93,7 @@ export default function Payment() {
                             Total Bill Details
                           </h2>
                           <div className='final_price_tag'>
-                            <h2 className='mi_heading'>₹ 4,700</h2>
+                            <h2 className='mi_heading'>$ 1260</h2>
                           </div>
                         </div>
                       </div>
@@ -118,7 +115,6 @@ export default function Payment() {
                     Cancel
                   </button>
                   <button
-                    to={"/booking-cargo"}
                     className='mi_btn mi_btn_secondary'
                     onClick={handleOpenDraftCOR}
                   >
@@ -138,25 +134,20 @@ export default function Payment() {
 
 function BookingBreadCrumb() {
   return (
-    <React.Fragment>
-      <div className='BookingBreadCrumb__list'>
-        <Link to={"/"} className='BookingBreadCrumb__link_fs'>
-          Home
-        </Link>
-        <i className='bx bx-chevron-right'></i>
-        <p className='BookingBreadCrumb__link_fs'>Booking Cargo</p>
-        <i className='bx bx-chevron-right'></i>
-        <Link to={"/booking-cargo"} className='BookingBreadCrumb__link_fs'>
-          Shipment Info
-        </Link>
-        <i className='bx bx-chevron-right'></i>
-        <Link
-          to={"/booking-cargo"}
-          className='BookingBreadCrumb__link_fs active'
-        >
-          Payment
-        </Link>
-      </div>
-    </React.Fragment>
+    <div className='BookingBreadCrumb__list'>
+      <Link to={"/"} className='BookingBreadCrumb__link_fs'>
+        Home
+      </Link>
+      <i className='bx bx-chevron-right'></i>
+      <p className='BookingBreadCrumb__link_fs'>Booking Cargo</p>
+      <i className='bx bx-chevron-right'></i>
+      <Link to={"/booking-cargo"} className='BookingBreadCrumb__link_fs'>
+        Shipment Info
+      </Link>
+      <i className='bx bx-chevron-right'></i>
+      <Link to={"/booking-cargo"} className='BookingBreadCrumb__link_fs active'>
+        Payment
+      </Link>
+    </div>
   );
 }
