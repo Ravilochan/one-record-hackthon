@@ -57,8 +57,8 @@ class CheckoutForm extends React.Component {
 export default function InjectedCheckoutForm() {
   return (
     <ElementsConsumer>
-      {({ stripe, elements }) => (
-        <CheckoutForm stripe={stripe} elements={elements} />
+      {({ stripe, elements, state, email }) => (
+        <CheckoutForm stripe={stripe} elements={elements} state={state} email={email}  />
       )}
     </ElementsConsumer>
   );

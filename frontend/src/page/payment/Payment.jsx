@@ -1,13 +1,16 @@
 import React from "react";
 import Banner from "../../components/banner/Banner";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { TextField } from "@mui/material";
 import "./Payment.css";
 import PaymentOption from "../../components/paymentOption/PaymentOption";
 
 export default function Payment() {
   const Navigate = useNavigate();
+  const {state} = useLocation();
   const [openPopup, setOpenPopup] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  console.log(state, "values");
   const handleOpenDraftCOR = () => {
     setOpenPopup(true);
   };
@@ -34,7 +37,7 @@ export default function Payment() {
                       <p className='Input__label_fs'>
                         Customer Email Address to send Invoice
                       </p>
-                      <TextField fullWidth placeholder='Enter Email Address' />
+                      <TextField fullWidth onChange={(txt) => setEmail(txt)} placeholder='Enter Email Address' />
                     </div>
                   </div>
                 </div>
@@ -54,13 +57,13 @@ export default function Payment() {
                             <h2 className='mi_small bill_title_fs'>
                               Net Amount
                             </h2>
-                            <p className='mi_note bill_amount_fs'>$ 1200</p>
+                            <p className='mi_note bill_amount_fs'>$ {state?.price * state?.weight}</p>
                           </div>
                           <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small bill_title_fs'>
-                              GRC ( $ 6.0 * 200 Kg )
+                              GRC ( $ {state?.price} * {state?.weight} Kg )
                             </h2>
-                            <p className='mi_note bill_amount_fs'>$ 1200</p>
+                            <p className='mi_note bill_amount_fs'>$ {state?.price * state?.weight}</p>
                           </div>
                           {/* <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small bill_title_fs'>
@@ -74,13 +77,13 @@ export default function Payment() {
                             <h2 className='mi_small bill_title_fs'>
                               Taxes (5%)
                             </h2>
-                            <p className='mi_note bill_amount_fs'>$ 60</p>
+                            <p className='mi_note bill_amount_fs'>$ {(state?.price * state?.weight) * 0.05}</p>
                           </div>
                         </div>
                         <div className='PaymentForm__bill_card_total'>
                           <div className='PaymentForm__bill_row'>
                             <h2 className='mi_small'>Total Amount</h2>
-                            <h2 className='mi_small'>$ 1260</h2>
+                            <h2 className='mi_small'>$ {state?.price * state?.weight + ((state?.price * state?.weight) * 0.05)}</h2>
                           </div>
                         </div>
                       </div>
@@ -93,7 +96,7 @@ export default function Payment() {
                             Total Bill Details
                           </h2>
                           <div className='final_price_tag'>
-                            <h2 className='mi_heading'>$ 1260</h2>
+                            <h2 className='mi_heading'>$ {state?.price * state?.weight + ((state?.price * state?.weight) * 0.05)}</h2>
                           </div>
                         </div>
                       </div>
@@ -127,7 +130,7 @@ export default function Payment() {
         </div>
       </div>
 
-      <PaymentOption keepMounted open={openPopup} onClose={handleClosePopup} />
+      <PaymentOption keepMounted open={openPopup} onClose={handleClosePopup} state={state} email={email} />
     </React.Fragment>
   );
 }

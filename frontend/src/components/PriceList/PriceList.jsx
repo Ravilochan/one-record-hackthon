@@ -30,7 +30,7 @@ export default function PriceList(props) {
           <div
             className='ModalPage__close_icon'
             onClick={() => {
-              onClose();
+              onClose(0, "");
             }}
           >
             <i className='bx bx-x'></i>
@@ -43,49 +43,49 @@ export default function PriceList(props) {
             flightDate='26/11/2023'
             flightNo='QR38'
             price='$11/kg'
-            onClose={onClose}
+            onClose={() => onClose(11, "QR38")}
           />
           <FlightPriceList
             flightDate='26/11/2023'
             flightNo='QR40'
             price='$7.8/kg'
-            onClose={onClose}
+            onClose={() => onClose(7.8, 'QR40')}
           />
           <FlightPriceList
             flightDate='26/11/2023'
             flightNo='QR42'
             price='$7.2/kg'
-            onClose={onClose}
+            onClose={() => onClose(7.2, 'QR42')}
           />
           <FlightPriceList
             flightDate='27/11/2023'
             flightNo='QR38'
             price='$6.0/kg'
-            onClose={onClose}
+            onClose={() => onClose(6,'QR38')}
           />
           <FlightPriceList
             flightDate='27/11/2023'
             flightNo='QR42'
             price='$6.0/kg'
-            onClose={onClose}
+            onClose={() => onClose(6,'QR42')}
           />
           <FlightPriceList
             flightDate='28/11/2023'
             flightNo='QR40'
             price='$6.4/kg'
-            onClose={onClose}
+            onClose={() => onClose(6.4,'QR40')}
           />
           <FlightPriceList
             flightDate='28/11/2023'
             flightNo='QR38'
             price='$4.5/kg'
-            onClose={onClose}
+            onClose={() => onClose(4.5, 'QR38')}
           />
           <FlightPriceList
             flightDate='28/11/2023'
             flightNo='QR42'
             price='$4.0/kg'
-            onClose={onClose}
+            onClose={() => onClose(4, 'QR42')}
           />
         </div>
       </DialogContent>
@@ -94,7 +94,7 @@ export default function PriceList(props) {
           <button
             className='mi_btn mi_btn_medium mi_btn_primary'
             onClick={() => {
-              onClose();
+              onClose(0, "");
             }}
           >
             <span>Close</span>

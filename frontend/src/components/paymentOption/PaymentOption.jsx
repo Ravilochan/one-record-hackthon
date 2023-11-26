@@ -26,7 +26,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function PaymentOption(props) {
-  const { onClose, open, handleOpenReviewCOR, ...other } = props;
+  const { onClose, open, handleOpenReviewCOR, email, state, ...other } = props;
   const [clientSecret, setClientSecret] = React.useState("");
 
   const [openPopup, setOpenPopup] = React.useState(false);
@@ -56,7 +56,7 @@ export default function PaymentOption(props) {
     fetch("http://localhost:3000/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }], price: 40 }),
+      body: JSON.stringify({ price: state.price, values: state, email: email }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
@@ -87,7 +87,7 @@ export default function PaymentOption(props) {
         <DialogContent dividers>
           {clientSecret && (
             <Elements stripe={stripePromise} options={options}>
-              <CheckoutForm />
+              <CheckoutForm state={state} email={email} />
             </Elements>
           )}
           {/* <div className='Input__table'>

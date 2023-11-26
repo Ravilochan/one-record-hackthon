@@ -11,6 +11,7 @@ const helmet = require("helmet");
 const stripe = require("stripe")(
   "sk_test_51KpYA6DMTAJsEyJelj7WWKumHF3DB8JCCEMtGZbwup9HOATVFP6sGxutiGfWLgzGSrRYZm0IEvbXKW2BSJFnaEoV00ACcIXHKX"
 );
+const BookingModel = require("../src/model/Booking");
 
 /**
  * Controllers
@@ -54,7 +55,7 @@ app.use(helmet());
  */
 
 app.post("/create-payment-intent", async (req, res) => {
-  const { price } = req.body;
+  const { price, values, email } = req.body;
 
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
@@ -65,6 +66,26 @@ app.post("/create-payment-intent", async (req, res) => {
       enabled: true,
     },
   });
+
+  const booking = new BookingModel({
+    customer: values.name,
+    iata_ref: values.iata,
+    class_code: values.cass,
+    no_of_pieces: values.noOfPieces,
+    no_of_uld: values.noOfUld,
+    weight: values.weight,
+    volume: values.agentCassCode,
+    origin: values.origin,
+    destination: values.destination,
+    commodity: values.commodityCode,
+    product: values.productCode,
+    shc: values.shc,
+    airline: values.airline,
+    flight: values.flight,
+    price: values.price,
+    pid: paymentIntent.client_secret,
+  });
+  await booking.save();
 
   res.send({
     clientSecret: paymentIntent.client_secret,
